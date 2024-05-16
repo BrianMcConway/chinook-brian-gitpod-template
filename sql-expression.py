@@ -38,6 +38,7 @@ track_table = Table(
 
 # making the connection
 with db.connect() as connection:
+
     # Query 1 - select all records from the "Artist" table
     select_query = artist_table.select()
 
@@ -55,6 +56,7 @@ with db.connect() as connection:
 
     # Query 6 - select all tracks where the composer is 'Queen' from the "Track" table
     # select_query = track_table.select().where(track_table.c.Composer == "Queen")
+
     results = connection.execute(select_query)
     for result in results:
         print(result)
